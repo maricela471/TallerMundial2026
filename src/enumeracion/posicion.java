@@ -5,11 +5,11 @@
 package enumeracion;
 
 /**
- *Representa las opciones de las posiciones en las que puede estar un jugador
- * @author Ramirez Maricela, Irigoyen Santiago, Ismael
+ *Representa los roles posible de los participantes
+ * @author Ramirez Maricela, Irigoyen Santiago,Cisnero Ismael
  * @version 1.0
  */
-public enum posicion {
+public enum Posicion {
     Arquero,
     Defensor,
     Mediocampista,

@@ -6,7 +6,7 @@ package enumeracion;
 
 /**
  *Representa las categorias posibles que puede tomar un arbitro
- * @author Ramirez maricela,Irigoyen Santiago,Ismael
+ * @author Ramirez maricela,Irigoyen Santiago,Cisnero Ismael
  * @version 1.0
  */
 public enum CategoriaArbitro {
