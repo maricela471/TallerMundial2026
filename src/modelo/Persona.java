@@ -6,7 +6,9 @@ package modelo;
 
 /**
  *
- * @author USUARIO
+ * clase abstracta"Persona",base para otras clases que heredan
+ * @author Ramirez maricela,Irigoyen Santiago,Cisnero Ismael
+ * 
  */
 public abstract class  Persona {
     private String nombre;
