@@ -5,26 +5,37 @@
 package modelo;
 import java.util.Date;
 import java.sql.Time;
+import java. util. ArrayList;
 /**
  *la clase "partido" tiene la información de cada partido jugado
- * @author USUARIO
+ * @author Ramirez Maricela
  */
 public class Partido {
     private Date fecha;
-    private Time gorario;
+    private Time horario;
     private Integer duracion;
     private Integer tiempoAdicional;
+    private Fase fase;
+    private Estadio estadio;
+    private ArrayList <Participacion> listaParticipaciones;
+    private ArrayList<Evento> listaEventos;
+    private Arbitraje listaArbitros;
     
     //constructor
 
     public Partido() {
     }
 
-    public Partido(Date fecha, Time gorario, Integer duracion, Integer tiempoAdicional) {
+    public Partido(Date fecha, Time horario, Integer duracion, Integer tiempoAdicional,Fase fase,Estadio estadio,Arbitraje listaArbitros) {
         this.fecha = fecha;
-        this.gorario = gorario;
+        this.horario = horario;
         this.duracion = duracion;
         this.tiempoAdicional = tiempoAdicional;
+        this.fase=fase;
+        this.estadio=estadio;
+        this.listaArbitros=listaArbitros;
+        this.listaEventos=new ArrayList<>();
+        this.listaParticipaciones=new ArrayList<>();
     }
     //setters
 
@@ -32,8 +43,8 @@ public class Partido {
         this.fecha = fecha;
     }
 
-    public void setGorario(Time gorario) {
-        this.gorario = gorario;
+    public void setHorario(Time horario) {
+        this.horario = horario;
     }
 
     public void setDuracion(Integer duracion) {
@@ -43,14 +54,19 @@ public class Partido {
     public void setTiempoAdicional(Integer tiempoAdicional) {
         this.tiempoAdicional = tiempoAdicional;
     }
+
+    public void setListaArbitros(Arbitraje listaArbitros) {
+        this.listaArbitros = listaArbitros;
+    }
+    
      //getters
 
     public Date getFecha() {
         return fecha;
     }
 
-    public Time getGorario() {
-        return gorario;
+    public Time getHorario() {
+        return horario;
     }
 
     public Integer getDuracion() {
@@ -60,9 +76,58 @@ public class Partido {
     public Integer getTiempoAdicional() {
         return tiempoAdicional;
     }
+
+    public Fase getFase() {
+        return fase;
+    }
+
+    public Estadio getEstadio() {
+        return estadio;
+    }
+
+    public Arbitraje getListaArbitros() {
+        return listaArbitros;
+    }
     
+
+    public ArrayList<Participacion> getListaParticipaciones() {
+        return listaParticipaciones;
+    }
+
+    public ArrayList<Evento> getListaEventos() {
+        return listaEventos;
+    }
+
     
+    //Métodos para los Arrays
+    /**
+     * el metodo agrega  eventos a la lista de eventos
+     * @param e es el evento a agregar
+     */
+ 
+    public void agregarEventos(Evento e){
+        listaEventos.add(e);
+    }
+    /**
+     * El metodo elimina  eventos a la lista de eventos
+     * @param e es el evento a eliminar
+     */
+    public void eliminarEvento(Evento e){
+        listaEventos.remove(e);
+    }
+    /**
+     * El metodo agrega  una participacion a la lista de participaciones
+     * @param p es la participacion  a agregar
+     */
+    public void agregarParticipacion(Participacion p){
+        listaParticipaciones.add(p);
+    }
     
-    
-    
+    /**
+     * El metodo elimina  una participacion a la lista de participaciones
+     * @param p es la participacion  a eliminar
+     */
+    public void eliminarParticipacion(Participacion p){
+        listaParticipaciones.remove(p);
+    }
 }
