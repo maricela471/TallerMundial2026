@@ -3,16 +3,18 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package modelo;
+import java.util.ArrayList;
 
 /**
  *clase "Mundial",en los atributos se detalla el año en que se juega, el comiezo del mundial y la fecha en que termina
- * @author Ramirez Maricela,Irigoyen Santiago,Cisnero Ismael
+ * @author Ramirez Maricela
  */
 public class Mundial {
     private Integer anio;
     private String mascota;
     private Integer fechaDesde;
     private Integer fechaHasta;
+    private ArrayList<Sede>listaSedes;
     
     //constructor
     public Mundial(Integer anio, String mascota, Integer fechaDesde, Integer fechaHasta){
@@ -20,6 +22,7 @@ public class Mundial {
         this.fechaDesde=fechaDesde;
         this.fechaHasta=fechaHasta;
         this.mascota=mascota;
+        this.listaSedes=new ArrayList <>();
     }
     
     //setters
@@ -57,6 +60,27 @@ public class Mundial {
     public Integer getFechaHasta() {
         return fechaHasta;
     }
+
+    public ArrayList<Sede> getListaSedes() {
+        return listaSedes;
+    }
+    
+    //Métodos para agregar o quitar en la lista de sedes
+    /**
+     * Agregar sede ingresa una sede a la lista
+     * @param s es la sede a agregar
+     */
+     public void agregarSede(Sede s){
+         listaSedes.add(s);
+     }
+     /**
+     * Eliminar sede quita una sede a la lista
+     * @param s es la sede a eliminat
+     */
+     public void eliminarSede(Sede s){
+         listaSedes.remove(s);
+     }
+     
     
     
     
