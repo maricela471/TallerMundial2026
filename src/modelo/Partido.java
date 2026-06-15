@@ -7,33 +7,47 @@ import java.util.Date;
 import java.sql.Time;
 import java. util. ArrayList;
 /**
- *la clase "partido" tiene la información de cada partido jugado
- * @author Ramirez Maricela
+ * Representa un partido dentro del torneo mundialista.
+ * Contiene la información esencial de cada encuentro jugado,
+ * incluyendo fecha, horario, duración y tiempo adicional.
+ *
+ * Relaciones principales:
+ * - Fase: el partido corresponde a una fase del torneo.
+ * - Estadio: el partido se desarrolla en un estadio específico.
+ * - Arbitraje: cada partido cuenta con un arbitraje asignado.
+ * - Participaciones: lista de selecciones que participan en el partido.
+ * - Eventos: lista de sucesos ocurridos durante el partido (goles, faltas, etc.).
+ *
+ * Esta clase permite gestionar tanto los datos básicos del partido
+ * como las colecciones dinámicas de participaciones y eventos.
+ *
+ * @author Ramírez Maricela
  */
+
 public class Partido {
     private Date fecha;
     private Time horario;
     private Integer duracion;
     private Integer tiempoAdicional;
     private Fase fase;
-    private Estadio estadio;
+    private Estadio seDesarrolla;
     private ArrayList <Participacion> listaParticipaciones;
     private ArrayList<Evento> listaEventos;
-    private Arbitraje listaArbitros;
+    private Arbitraje arbitraje;
     
     //constructor
 
     public Partido() {
     }
 
-    public Partido(Date fecha, Time horario, Integer duracion, Integer tiempoAdicional,Fase fase,Estadio estadio,Arbitraje listaArbitros) {
+    public Partido(Date fecha, Time horario, Integer duracion, Integer tiempoAdicional,Fase fase,Estadio seDesarrolla,Arbitraje arbitraje) {
         this.fecha = fecha;
         this.horario = horario;
         this.duracion = duracion;
         this.tiempoAdicional = tiempoAdicional;
         this.fase=fase;
-        this.estadio=estadio;
-        this.listaArbitros=listaArbitros;
+        this.seDesarrolla=seDesarrolla;
+        this.arbitraje=arbitraje;
         this.listaEventos=new ArrayList<>();
         this.listaParticipaciones=new ArrayList<>();
     }
@@ -55,9 +69,14 @@ public class Partido {
         this.tiempoAdicional = tiempoAdicional;
     }
 
-    public void setListaArbitros(Arbitraje listaArbitros) {
-        this.listaArbitros = listaArbitros;
+    public void setArbitraje(Arbitraje arbitraje) {
+        this.arbitraje = arbitraje;
     }
+
+    public void setSeDesarrolla(Estadio seDesarrolla) {
+        this.seDesarrolla = seDesarrolla;
+    }
+    
     
      //getters
 
@@ -81,12 +100,12 @@ public class Partido {
         return fase;
     }
 
-    public Estadio getEstadio() {
-        return estadio;
+    public Estadio getSeDesarrolla() {
+        return seDesarrolla;
     }
 
-    public Arbitraje getListaArbitros() {
-        return listaArbitros;
+    public Arbitraje getArbitraje() {
+        return arbitraje;
     }
     
 

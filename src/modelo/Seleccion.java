@@ -5,9 +5,24 @@
 package modelo;
 import java.util.ArrayList;
 /**
+ * Representa una selección nacional participante en el torneo mundialista.
+ * Contiene la información principal de la federación, indumentaria,
+ * posición en el ranking FIFA y su cuerpo técnico.
  *
- * @author USUARIO
+ * Relaciones principales:
+ * - Jugador: lista de jugadores convocados que integran la selección.
+ * - DirectorTecnico: entrenador principal responsable del equipo.
+ * - CuerpoTecnico: staff de apoyo técnico de la selección.
+ * - Grupo: la selección se integra en un grupo de la fase inicial del torneo.
+ * - País: cada selección representa a un país específico.
+ * - Participacion: lista de participaciones que vinculan la selección con partidos.
+ *
+ * A través de las participaciones se puede acceder a los partidos
+ * y al desempeño de la selección en cada encuentro.
+ *
+ * @author Ramírez Maricela
  */
+
 public class Seleccion {
     private  String nombreFederacion;
     private String camisetaPrincipal;
@@ -16,11 +31,15 @@ public class Seleccion {
     private Integer rankingFIFA;
     private DirectorTecnico directorTecnico;
     private CuerpoTecnico cuerpoTecnico;
+    private Grupo grupo;
+    private Pais pais;
     private ArrayList <Jugador> listaJugadores;
+    private ArrayList<Participacion> listaPartidos;
+
     
     //constructor
 
-    public Seleccion(String nombreFederacion, String camisetaPrincipal, String camisetaSecundaria, boolean cabezaGrupo, Integer rankingFIFA,DirectorTecnico directorTecnico, CuerpoTecnico cuerpoTecnico) {
+    public Seleccion(String nombreFederacion, String camisetaPrincipal, String camisetaSecundaria, boolean cabezaGrupo, Integer rankingFIFA,DirectorTecnico directorTecnico, CuerpoTecnico cuerpoTecnico, Grupo grupo, Pais pais) {
         this.nombreFederacion = nombreFederacion;
         this.camisetaPrincipal = camisetaPrincipal;
         this.camisetaSecundaria = camisetaSecundaria;
@@ -28,7 +47,10 @@ public class Seleccion {
         this.rankingFIFA = rankingFIFA;
         this.directorTecnico = directorTecnico;
         this.cuerpoTecnico = cuerpoTecnico;
-        this.listaJugadores = listaJugadores;
+        this.grupo=grupo;
+        this.pais=pais;
+        this.listaJugadores = new ArrayList <>();
+        this.listaPartidos = new ArrayList <>();
         
     }
     //setters
@@ -60,6 +82,15 @@ public class Seleccion {
     public void setCuerpoTecnico(CuerpoTecnico cuerpoTecnico) {
         this.cuerpoTecnico = cuerpoTecnico;
     }
+
+    public void setGrupo(Grupo grupo) {
+        this.grupo = grupo;
+    }
+
+    public void setPais(Pais pais) {
+        this.pais = pais;
+    }
+    
 
 
     
@@ -97,6 +128,19 @@ public class Seleccion {
     public ArrayList<Jugador> getListaJugadores() {
         return listaJugadores;
     }
+
+    public Grupo getGrupo() {
+        return grupo;
+    }
+
+    public Pais getPais() {
+        return pais;
+    }
+
+    public ArrayList<Participacion> getListaPartidos() {
+        return listaPartidos;
+    }
+    
     //Métodos
     
     /**
@@ -122,5 +166,7 @@ public class Seleccion {
     public void eliminarJugador(Jugador s){
         listaJugadores.remove(s);
     }
+    
+  
 }
 

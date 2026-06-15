@@ -5,14 +5,35 @@
 package modelo;
 
 /**
- *La clase "Participacion" representa la relación entre "Seleccion" y "Partido"
- * @author Ramirez maricela
+ * Representa la participación de una selección en un partido.
+ * Contiene información sobre si la selección juega como local o visitante,
+ * la cantidad de goles convertidos y las tarjetas recibidas durante el encuentro.
+ *
+ * Relaciones principales:
+ * - Partido: cada participación pertenece a un partido específico.
+ * - Selección: referencia a la selección que participa en el partido.
+ *
+ * Atributos:
+ * - esLocal: indica si la selección juega como local.
+ * - cantidadGoles: número de goles anotados por la selección.
+ * - cantidadTarjetasAmarillas: tarjetas amarillas recibidas.
+ * - cantidadTarjetasRojas: tarjetas rojas recibidas.
+ *
+ * Métodos de utilidad:
+ * - agregarGol(): incrementa la cantidad de goles.
+ * - agregarTarjetaAmarilla(): incrementa la cantidad de tarjetas amarillas.
+ * - agregarTarjetaRoja(): incrementa la cantidad de tarjetas rojas.
+ *
+ * Esta clase funciona como vínculo entre Partido y Selección,
+ * permitiendo modelar el desempeño de cada equipo dentro de un encuentro.
+ *
+ * @author Ramírez Maricela
  */
+
 public class Participacion {
     private boolean esLocal;
     // Se agrega referencia al objeto Seleccion para acceder a todos sus datos,
     private Seleccion seleccion;
-    // ya que el UML solo modela los métodos de conteo pero no la relación explícita.
     private Integer cantidadGoles;
     private Integer cantidadTarjetasAmarillas;
     private Integer cantidadTarjetasRojas;

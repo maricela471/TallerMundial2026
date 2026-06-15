@@ -5,9 +5,22 @@
 package modelo;
 
 /**
+ * Representa un estadio dentro de una sede mundialista.
+ * Un estadio es el recinto deportivo donde se desarrollan los partidos
+ * del mundial, identificado por su nombre y capacidad de espectadores.
  *
- * @author USUARIO
+ * Atributos principales:
+ * - nombre: nombre oficial del estadio.
+ * - capacidad: cantidad máxima de espectadores que puede albergar.
+ *
+ * El estadio está asociado a una sede, pero esta relación se gestiona
+ * fuera de la clase, manteniendo aquí únicamente la información propia
+ * del estadio.
+ * Partido: los partidos se desarrollan en este estadio.
+ *
+ * @author Ramírez Maricela
  */
+
 public class Estadio {
     private String Nombre;
     private Integer capacidad;
