@@ -15,7 +15,7 @@ import java. util. ArrayList;
  * - Fase: el partido corresponde a una fase del torneo.
  * - Estadio: el partido se desarrolla en un estadio específico.
  * - Arbitraje: cada partido cuenta con un arbitraje asignado.
- * - Participaciones: lista de selecciones que participan en el partido.
+ * - Participaciones: dos objetos identificados contipo participacion.
  * - Eventos: lista de sucesos ocurridos durante el partido (goles, faltas, etc.).
  *
  * Esta clase permite gestionar tanto los datos básicos del partido
@@ -31,25 +31,27 @@ public class Partido {
     private Integer tiempoAdicional;
     private Fase fase;
     private Estadio seDesarrolla;
-    private ArrayList <Participacion> listaParticipaciones;
+    private Participacion participacion1;
+    private Participacion participacion2;
     private ArrayList<Evento> listaEventos;
-    private Arbitraje arbitraje;
+    private ArrayList<Arbitraje> arbitraje;
     
     //constructor
 
-    public Partido() {
-    }
+   
 
-    public Partido(Date fecha, Time horario, Integer duracion, Integer tiempoAdicional,Fase fase,Estadio seDesarrolla,Arbitraje arbitraje) {
+    public Partido(Date fecha, Time horario, Integer duracion, Integer tiempoAdicional,Fase fase,Estadio seDesarrolla,Participacion participacion1,Participacion participacion2 ) {
         this.fecha = fecha;
         this.horario = horario;
         this.duracion = duracion;
         this.tiempoAdicional = tiempoAdicional;
         this.fase=fase;
         this.seDesarrolla=seDesarrolla;
-        this.arbitraje=arbitraje;
+        this.arbitraje=new ArrayList<>();
+        this.participacion1=participacion1;
+        this.participacion2=participacion2;
         this.listaEventos=new ArrayList<>();
-        this.listaParticipaciones=new ArrayList<>();
+        
     }
     //setters
 
@@ -69,13 +71,24 @@ public class Partido {
         this.tiempoAdicional = tiempoAdicional;
     }
 
-    public void setArbitraje(Arbitraje arbitraje) {
-        this.arbitraje = arbitraje;
-    }
-
+    
     public void setSeDesarrolla(Estadio seDesarrolla) {
         this.seDesarrolla = seDesarrolla;
     }
+
+    public void setFase(Fase fase) {
+        this.fase = fase;
+    }
+    
+
+    public void setParticipacion1(Participacion participacion1) {
+        this.participacion1 = participacion1;
+    }
+
+    public void setParticipacion2(Participacion participacion2) {
+        this.participacion2 = participacion2;
+    }
+    
     
     
      //getters
@@ -104,14 +117,21 @@ public class Partido {
         return seDesarrolla;
     }
 
-    public Arbitraje getArbitraje() {
+    public Participacion getParticipacion1() {
+        return participacion1;
+    }
+
+    public Participacion getParticipacion2() {
+        return participacion2;
+    }
+
+    public ArrayList<Arbitraje> getArbitraje() {
         return arbitraje;
     }
     
+    
 
-    public ArrayList<Participacion> getListaParticipaciones() {
-        return listaParticipaciones;
-    }
+   
 
     public ArrayList<Evento> getListaEventos() {
         return listaEventos;
@@ -135,18 +155,12 @@ public class Partido {
         listaEventos.remove(e);
     }
     /**
-     * El metodo agrega  una participacion a la lista de participaciones
-     * @param p es la participacion  a agregar
+     * el metodo agrega el arbitarje del partido
+     * @param a es el arbitraje a agregar
      */
-    public void agregarParticipacion(Participacion p){
-        listaParticipaciones.add(p);
+ 
+    public void agregararbitraje(Arbitraje a){
+        arbitraje.add(a);
     }
     
-    /**
-     * El metodo elimina  una participacion a la lista de participaciones
-     * @param p es la participacion  a eliminar
-     */
-    public void eliminarParticipacion(Participacion p){
-        listaParticipaciones.remove(p);
-    }
 }

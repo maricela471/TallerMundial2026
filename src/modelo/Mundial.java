@@ -6,9 +6,32 @@ package modelo;
 import java.util.ArrayList;
 
 /**
- *clase "Mundial",en los atributos se detalla el año en que se juega, el comiezo del mundial y la fecha en que termina
- * @author Ramirez Maricela
+ * Clase "Mundial", representa un torneo mundialista de fútbol.
+ * Contiene información sobre el año en que se disputa,
+ * las fechas de inicio y fin, la mascota oficial y las sedes
+ * donde se desarrollan los partidos.
+ *
+ * Relaciones principales:
+ * - Sede: lista de sedes que forman parte del mundial.
+ *
+ * Atributos:
+ * - anio: año en que se juega el mundial.
+ * - mascota: mascota oficial del torneo.
+ * - fechaDesde: fecha de inicio del mundial.
+ * - fechaHasta: fecha de finalización del mundial.
+ * - listaSedes: sedes anfitrionas donde se disputan los partidos.
+ *
+ * Métodos de utilidad:
+ * - agregarSede(Sede s): añade una sede a la lista de sedes del mundial.
+ * - eliminarSede(Sede s): elimina una sede de la lista del mundial.
+ *
+ * Esta clase permite modelar la identidad general del torneo,
+ * incluyendo su cronología, símbolos oficiales y las ciudades
+ * anfitrionas que lo organizan.
+ *
+ * @author Ramírez Maricela
  */
+
 public class Mundial {
     private Integer anio;
     private String mascota;

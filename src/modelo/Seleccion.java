@@ -29,7 +29,7 @@ public class Seleccion {
     private String camisetaSecundaria;
     private boolean cabezaGrupo;
     private Integer rankingFIFA;
-    private DirectorTecnico directorTecnico;
+    private DirectorTecnico directorTecnico;//revisar porque la multiplicidad del UML indica que puede ser un ArraiList
     private CuerpoTecnico cuerpoTecnico;
     private Grupo grupo;
     private Pais pais;
