@@ -4,7 +4,6 @@
  */
 package modelo;
 import java.util.ArrayList;
-
 /**
  * Clase "Grupo", representa un conjunto de selecciones
  * que compiten entre sí en la fase de grupos del torneo.
@@ -126,4 +125,3 @@ public class Grupo {
 }
          
      }
-

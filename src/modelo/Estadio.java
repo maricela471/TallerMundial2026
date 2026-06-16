@@ -22,19 +22,19 @@ package modelo;
  */
 
 public class Estadio {
-    private String Nombre;
+    private String nombre;
     private Integer capacidad;
     
     //constructor
 
-    public Estadio(String Nombre, Integer capacidad) {
-        this.Nombre = Nombre;
+    public Estadio(String nombre, Integer capacidad) {
+        this.nombre = nombre;
         this.capacidad = capacidad;
     }
     //setters
 
     public void setNombre(String Nombre) {
-        this.Nombre = Nombre;
+        this.nombre = Nombre;
     }
 
     public void setCapacidad(Integer capacidad) {
@@ -44,7 +44,7 @@ public class Estadio {
     //getters
 
     public String getNombre() {
-        return Nombre;
+        return nombre;
     }
 
     public Integer getCapacidad() {

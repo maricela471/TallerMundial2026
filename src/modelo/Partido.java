@@ -125,7 +125,7 @@ public class Partido {
         return participacion2;
     }
 
-    public ArrayList<Arbitraje> getArbitraje() {
+    public ArrayList<Arbitraje> getListaArbitraje() {
         return arbitraje;
     }
     

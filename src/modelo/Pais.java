@@ -5,21 +5,41 @@
 package modelo;
 import java.util.ArrayList;
 /**
- *clase "Pais", contiene la descripción de cada pais participante del mundial,cuales son sus sedes, y los arbitros pertenecientes a este pais
- * @author Maricela Ramirez
+ * Clase "Pais", representa a cada nación participante del mundial.
+ * Contiene información básica como el nombre y la bandera, además
+ * de las sedes y árbitros asociados a dicho país.
+ *
+ * Relaciones principales:
+ * - Sede: lista de sedes que pertenecen al país.
+ * - Arbitro: lista de árbitros originarios del país.
+ * - Selección: cada país está representado por una selección nacional.
+ *
+ * Atributos:
+ * - nombre: nombre del país.
+ * - bandera: símbolo gráfico que identifica al país.
+ * - listaSedes: sedes anfitrionas que se encuentran en el país.
+ * - listaArbitro: árbitros que pertenecen al país.
+ *
+ * Métodos de utilidad:
+ * - agregarSedes(Sede s): añade una sede a la lista de sedes del país.
+ * - agregarArbitros(Arbitro s): añade un árbitro a la lista de árbitros del país.
+ * @author Ramírez Maricela
  */
+
 public class Pais {
     private String nombre;
     private String bandera;
-    private final ArrayList<Arbitro>listaArbitro;
-    private final  ArrayList <Sede>listaSedes;
+    private  ArrayList<Arbitro>listaArbitro;
+    private  ArrayList <Sede>listaSedes;
+    private Seleccion seleccion;
     
     
     //constructor
 
-    public Pais(String nombre, String bandera) {
+    public Pais(String nombre, String bandera,Seleccion seleccion) {
         this.nombre = nombre;
         this.bandera = bandera;
+        this.seleccion=seleccion;
         this.listaSedes= new ArrayList<>();
         this.listaArbitro=new ArrayList<>();
     }
@@ -33,6 +53,11 @@ public class Pais {
     public void setBandera(String bandera) {
         this.bandera = bandera;
     }
+
+    public void setSeleccion(Seleccion seleccion) {
+        this.seleccion = seleccion;
+    }
+    
     
     //getters
 
@@ -51,6 +76,11 @@ public class Pais {
     public ArrayList<Arbitro> getListaArbitro() {
         return listaArbitro;
     }
+
+    public Seleccion getSeleccion() {
+        return seleccion;
+    }
+    
     
     //Metodos
     /**

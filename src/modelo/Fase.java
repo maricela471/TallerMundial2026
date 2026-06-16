@@ -3,6 +3,8 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package modelo;
+import java.util.ArrayList;
+
 /**
  * Clase "Fase", representa una etapa del torneo mundialista.
  * Cada fase puede incluir varios grupos y partidos,

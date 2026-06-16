@@ -5,11 +5,25 @@
 package modelo;
 
 /**
+ * Clase abstracta "Persona", sirve como clase base para modelar
+ * individuos dentro del torneo mundialista. Esta clase abstracta permite definir una estructura común
+ * para todas las personas involucradas en el torneo, facilitando
+ * la reutilización y la extensión en clases derivadas.
  *
- * clase abstracta"Persona",base para otras clases que heredan
- * @author Ramirez maricela,Irigoyen Santiago,Cisnero Ismael
- * 
+ * Atributos:
+ * - nombre: nombre completo de la persona.
+ * - fechaNacimiento: año de nacimiento de la persona.
+ *
+ * Métodos de utilidad:
+ * - setNombre(String nombre): establece el nombre de la persona.
+ * - getNombre(): devuelve el nombre de la persona.
+ * - setFechaNacimiento(Integer fechaNacimiento): establece la fecha de nacimiento.
+ * - getFechaNacimiento(): devuelve la fecha de nacimiento.
+ *
+ *
+ * @author Ramírez Maricela
  */
+
 public abstract class  Persona {
     private String nombre;
     private Integer fechaNacimiento;

@@ -6,16 +6,38 @@ package modelo;
 import java.util.ArrayList;
 
 /**
- * Representa una sede dentro del torneo.
- * Una sede corresponde a una ciudad anfitriona donde se alojan las selecciones
- * y se organizan los partidos. 
- * Contiene información geográfica y contextual como ciudad, clima, altura sobre el nivel del mar
- * y zona horaria.
- * 
- * Relacionada con:
+ * Clase "Sede", representa una ciudad anfitriona dentro del torneo mundialista.
+ * Una sede corresponde al lugar donde se alojan las selecciones y se organizan
+ * los partidos, aportando información geográfica y contextual.
+ *
+ * Relaciones principales:
  * - Pais: cada sede pertenece a un único país.
+ * - Mundial: cada sede está asociada a un mundial específico.
  * - Estadio: una sede puede contener uno o varios estadios mundialistas.
+ *
+ * Atributos:
+ * - ciudad: nombre de la ciudad anfitriona.
+ * - alturaNivelMar: altura de la ciudad sobre el nivel del mar.
+ * - clima: condiciones climáticas predominantes en la sede.
+ * - zonaHoraria: zona horaria de la ciudad.
+ * - pertenece: país al que pertenece la sede.
+ * - mundial: mundial en el que participa la sede.
+ * - listaTieneEstadio: lista de estadios ubicados en la sede.
+ *
+ * Métodos de utilidad:
+ * - setCiudad(String ciudad): establece el nombre de la ciudad.
+ * - setAlturaNivelMar(float alturaNivelMar): define la altura sobre el nivel del mar.
+ * - setClima(String clima): establece el clima de la sede.
+ * - setZonaHoraria(String zonaHoraria): define la zona horaria.
+ * - setPertenece(Pais pertenece): asigna el país al que pertenece la sede.
+ * - setMundial(Mundial mundial): vincula la sede con un mundial.
+ * - getCiudad(), getAlturaNivelMar(), getClima(), getZonaHoraria(),
+ *   getPertenece(), getMundial(), getListaTieneEstadio(): devuelven los valores de los atributos.
+ * - agregarEstadio(Estadio s): añade un estadio a la lista de estadios de la sede.
+ *
+ * @author Ramírez Maricela
  */
+
 
 public class Sede {
     private String ciudad;

@@ -3,8 +3,25 @@ package modelo;
 import enumeracion.CategoriaArbitro;
 
 /**
+ * Clase "Arbitraje", representa la asignación de un árbitro
+ * a un partido junto con el rol que desempeña.
  *
- * @author USUARIO
+ * Relaciones principales:
+ * - Arbitro: juez deportivo asignado al partido.
+ * - CategoriaArbitro: enumeración que define el rol del árbitro
+ *   (ej. principal, asistente, cuarto árbitro).
+ *
+ * Atributos:
+ * - arbitro: árbitro asignado al partido.
+ * - rol: rol específico del árbitro dentro del encuentro.
+ *
+ * Métodos de utilidad:
+ * - setArbitro(Arbitro arbitro): establece el árbitro asignado.
+ * - getArbitro(): devuelve el árbitro asignado.
+ * - setRol(CategoriaArbitro rol): establece el rol del árbitro.
+ * - getRol(): devuelve el rol del árbitro.
+ *
+ * @author Ramírez Maricela
  */
 
 public class Arbitraje {

@@ -30,27 +30,27 @@ public class Seleccion {
     private boolean cabezaGrupo;
     private Integer rankingFIFA;
     private DirectorTecnico directorTecnico;//revisar porque la multiplicidad del UML indica que puede ser un ArraiList
-    private CuerpoTecnico cuerpoTecnico;
+    private ArrayList<CuerpoTecnico> listaCuerpoTecnico;
     private Grupo grupo;
     private Pais pais;
     private ArrayList <Jugador> listaJugadores;
-    private ArrayList<Participacion> listaPartidos;
+    private ArrayList<Participacion> listaParticipacion;
 
     
     //constructor
 
-    public Seleccion(String nombreFederacion, String camisetaPrincipal, String camisetaSecundaria, boolean cabezaGrupo, Integer rankingFIFA,DirectorTecnico directorTecnico, CuerpoTecnico cuerpoTecnico, Grupo grupo, Pais pais) {
+    public Seleccion(String nombreFederacion, String camisetaPrincipal, String camisetaSecundaria, boolean cabezaGrupo, Integer rankingFIFA,DirectorTecnico directorTecnico, Grupo grupo, Pais pais) {
         this.nombreFederacion = nombreFederacion;
         this.camisetaPrincipal = camisetaPrincipal;
         this.camisetaSecundaria = camisetaSecundaria;
         this.cabezaGrupo = cabezaGrupo;
         this.rankingFIFA = rankingFIFA;
         this.directorTecnico = directorTecnico;
-        this.cuerpoTecnico = cuerpoTecnico;
+        this.listaCuerpoTecnico =new ArrayList <>();
         this.grupo=grupo;
         this.pais=pais;
         this.listaJugadores = new ArrayList <>();
-        this.listaPartidos = new ArrayList <>();
+        this.listaParticipacion = new ArrayList <>();
         
     }
     //setters
@@ -79,9 +79,7 @@ public class Seleccion {
         this.directorTecnico = directorTecnico;
     }
 
-    public void setCuerpoTecnico(CuerpoTecnico cuerpoTecnico) {
-        this.cuerpoTecnico = cuerpoTecnico;
-    }
+   
 
     public void setGrupo(Grupo grupo) {
         this.grupo = grupo;
@@ -121,9 +119,11 @@ public class Seleccion {
         return directorTecnico;
     }
 
-    public CuerpoTecnico getCuerpoTecnico() {
-        return cuerpoTecnico;
+    public ArrayList<CuerpoTecnico> getListaCuerpoTecnico() {
+        return listaCuerpoTecnico;
     }
+
+    
 
     public ArrayList<Jugador> getListaJugadores() {
         return listaJugadores;
@@ -137,8 +137,8 @@ public class Seleccion {
         return pais;
     }
 
-    public ArrayList<Participacion> getListaPartidos() {
-        return listaPartidos;
+    public ArrayList<Participacion> getListaParticipacion() {
+        return listaParticipacion;
     }
     
     //Métodos
@@ -165,6 +165,27 @@ public class Seleccion {
      */
     public void eliminarJugador(Jugador s){
         listaJugadores.remove(s);
+    }
+    /**
+     * Agregar participacion añade una participacion a la lista
+     * @param p es de tipo participacion y es la participacion a agregar
+     */
+    public void agregarParticipacion(Participacion p){
+        listaParticipacion.add(p);
+    }
+    /**
+     * Elimina una participacion quita una participacion a la lista
+     * @param p es de tipo participacion y es la participacion a eliminar
+     */
+    public void eliminarParticipacion(Participacion p){
+        listaParticipacion.remove(p);
+    }
+     /**
+     * Agregar cuerpo tecnico añade un cuerpo tecnico a la lista
+     * @param c es de tipo CuerpoTecnico y es el objeto a agregar
+     */
+    public void agregarCuerpoTecnico(CuerpoTecnico c){
+        listaCuerpoTecnico.add(c);
     }
     
   
