@@ -90,6 +90,9 @@ public class Grupo {
     public void eliminarSeleccion(Seleccion s){
         listaSelecciones.remove(s);
     }
+    public void agregarFase(Fase f){
+    listaFases.add(f);
+    }
     /**
  * Calcula la cantidad de puntos obtenidos por una selección
  * a lo largo de todas las fases y partidos disputados.
