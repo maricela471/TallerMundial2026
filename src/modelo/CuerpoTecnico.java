@@ -34,6 +34,7 @@ public class CuerpoTecnico extends Persona {
     public CuerpoTecnico(String nombre, int fechaNacimiento, Rol rol,Seleccion seleccion) {
         super(nombre, fechaNacimiento);
         this.rol = rol;
+        this.seleccion=seleccion;
     }
 
     //setters

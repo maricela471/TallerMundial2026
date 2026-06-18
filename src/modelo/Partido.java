@@ -39,7 +39,7 @@ public class Partido {
 
    
 
-    public Partido(Date fecha, Time horario, Integer duracion, Integer tiempoAdicional,Fase fase,Estadio seDesarrolla,Participacion participacion1,Participacion participacion2 ) {
+    public Partido(Date fecha, Time horario, Integer duracion, Integer tiempoAdicional,Fase fase,Estadio seDesarrolla ) {
         this.fecha = fecha;
         this.horario = horario;
         this.duracion = duracion;
@@ -128,6 +128,7 @@ public class Partido {
     public ArrayList<Evento> getListaEventos() {
         return listaEventos;
     }
+    
 
     
     //Métodos para los Arrays
@@ -154,5 +155,7 @@ public class Partido {
     public void agregararbitraje(Arbitraje a){
         arbitraje.add(a);
     }
-    
+    public void agregarParticipacion(Participacion p){
+    listaParticipaciones.add(p);
+}
 }

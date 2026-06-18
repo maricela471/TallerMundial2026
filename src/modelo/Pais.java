@@ -29,9 +29,10 @@ import java.util.ArrayList;
 public class Pais {
     private String nombre;
     private String bandera;
+    private Seleccion Seleccion;
     private  ArrayList<Arbitro>listaArbitro;
     private  ArrayList <Sede>listaSedes;
-    private Seleccion Seleccion;
+    
    
     
     
@@ -40,9 +41,10 @@ public class Pais {
     public Pais(String nombre, String bandera,Seleccion seleccion) {
         this.nombre = nombre;
         this.bandera = bandera;
-        this.listaSedes= new ArrayList<>();
-        this.listaArbitro=new ArrayList<>();
         this.Seleccion=seleccion;
+        this.listaArbitro=new ArrayList<Arbitro>();
+        this.listaSedes= new ArrayList<Sede>();
+        
         
     }
     

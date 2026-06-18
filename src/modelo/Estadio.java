@@ -71,9 +71,25 @@ public class Estadio {
     * Agrega un partido a la lista de partidos disputados en este estadio.
     * @param p el partido a agregar de tipo Partido
     */
-      public void agregarPartido(Partido p){
-       listaPartidos.add(p);
+     public void agregarPartido(Partido p) {
+    boolean fueCargado = false;
+
+    for (Partido d : listaPartidos) {
+        if (d.getFecha().equals(p.getFecha()) && d.getHorario().equals(p.getHorario())) {
+            System.out.println("Este partido ya fue cargado");
+            fueCargado = true;
+            break; // ya encontré duplicado, no necesito seguir
+        }
+    }
+
+    if (!fueCargado) {
+        listaPartidos.add(p);
+    }
+}
+
+          
+       
       }
     
     
-}
+

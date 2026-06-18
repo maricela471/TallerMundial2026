@@ -28,6 +28,7 @@ package modelo;
 public class Arbitro extends Persona {
     private int aniosExperiencia;
     private Pais pais;
+    //lista arbitraje
 
     //constructor
 

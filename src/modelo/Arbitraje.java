@@ -27,13 +27,15 @@ import enumeracion.CategoriaArbitro;
 public class Arbitraje {
     private Arbitro arbitro;
     private CategoriaArbitro rol;
+    private Partido partido;
     
 
     //constructor 
 
-    public Arbitraje(Arbitro arbitro, CategoriaArbitro rol) {
+    public Arbitraje(Arbitro arbitro, CategoriaArbitro rol,Partido partido) {
         this.arbitro = arbitro;
         this.rol = rol;
+        this.partido=partido;
     }
 
     //setters
@@ -46,6 +48,11 @@ public class Arbitraje {
         this.rol = rol;
     }
 
+    public void setPartido(Partido partido) {
+        this.partido = partido;
+    }
+    
+
     //getters
 
     public Arbitro getArbitro() {
@@ -55,5 +62,10 @@ public class Arbitraje {
     public CategoriaArbitro getRol() {
         return rol;
     }
+
+    public Partido getPartido() {
+        return partido;
+    }
+    
 
 }

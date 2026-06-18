@@ -3,6 +3,9 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package modelo;
+import enumeracion.TipoEvento;
+import java.util.ArrayList;
+
 
 /**
  * Representa la participación de una selección en un partido.
@@ -34,17 +37,14 @@ public class Participacion {
     private boolean esLocal;
     // Se agrega referencia al objeto Seleccion para acceder a todos sus datos,
     private Seleccion seleccion;
-    private Integer cantidadGoles;
-    private Integer cantidadTarjetasAmarillas;
-    private Integer cantidadTarjetasRojas;
+    private Partido partido;
     //constructor
 
-    public Participacion(boolean esLocal,Seleccion seleccion) {
+    public Participacion(boolean esLocal,Seleccion seleccion,Partido partido) {
         this.esLocal = esLocal;
-        this.cantidadGoles=0;
-        this.cantidadTarjetasAmarillas=0;
-        this.cantidadTarjetasRojas=0;
+        
         this.seleccion=seleccion;
+        this.partido=partido;
     }
     //setters
 
@@ -56,17 +56,14 @@ public class Participacion {
         this.seleccion = seleccion;
     }
 
-    public void setCantidadGoles(Integer cantidadGoles) {
-        this.cantidadGoles = cantidadGoles;
+    public void setPartido(Partido partido) {
+        this.partido = partido;
     }
+    
 
-    public void setCantidadTarjetasAmarillas(Integer cantidadTarjetasAmarillas) {
-        this.cantidadTarjetasAmarillas = cantidadTarjetasAmarillas;
-    }
+    
 
-    public void setCantidadTarjetasRojas(Integer cantidadTarjetasRojas) {
-        this.cantidadTarjetasRojas = cantidadTarjetasRojas;
-    }
+   
     
     //getters
 
@@ -78,35 +75,60 @@ public class Participacion {
         return seleccion;
     }
 
-    public Integer getCantidadGoles() {
-        return cantidadGoles;
-    }
-
-    public Integer getCantidadTarjetasAmarillas() {
-        return cantidadTarjetasAmarillas;
-    }
-
-    public Integer getCantidadTarjetasRojas() {
-        return cantidadTarjetasRojas;
-    }
     
-    //Métodos para agregar tarjetas y goles
-    /**
-    * Agrega una tarjeta amarilla a la participacion
-    */
-     public void agregarTarjetaAmarilla() {
-         cantidadTarjetasAmarillas+=1;
-     }
-     /**
-    * Agrega una tarjeta roja a la participacion
-    */
-     public void agregarTarjetaRoja() {
-         cantidadTarjetasRojas+=1;
-     }
-     /**
-    * Agrega un gol a la participacion
-    */
-      public void agregarGol() {
-         cantidadGoles+=1;
-      }
+   
+/**
+ * Cuenta la cantidad de goles convertidos por la selección en el partido.
+ * No pueden existir dos goles en el mismo minuto.
+ * @return cantidad de goles de la selección
+ */
+public int cantidadGoles() {
+    int count = 0;
+    ArrayList<Integer> minutosRegistrados = new ArrayList<>();
+
+    for (Evento e : partido.getListaEventos()) {
+        if (e.getTipo() == TipoEvento.GOL &&
+            e.getJugador().getSeleccion().equals(seleccion)) {
+            
+            // Control: verificar que el minuto no esté repetido
+            if (!minutosRegistrados.contains(e.getMinuto())) {
+                minutosRegistrados.add(e.getMinuto());
+                count++;
+            }
+        }
+    }
+    return count;
+}
+
+
+/**
+ * Cuenta las tarjetas amarillas recibidas por la selección en el partido.
+ * @return cantidad de tarjetas amarillas
+ */
+public int cantidadTarjetasAmarillas() {
+    int count = 0;
+    for (Evento e : partido.getListaEventos()) {
+        if (e.getTipo() == TipoEvento.TARJETAAMARILLA &&
+            e.getJugador().getSeleccion().equals(seleccion)) {
+            count++;
+        }
+    }
+    return count;
+}
+
+/**
+ * Cuenta las tarjetas rojas recibidas por la selección en el partido.
+ * @return cantidad de tarjetas rojas
+ */
+public int cantidadTarjetasRojas() {
+    int count = 0;
+    for (Evento e : partido.getListaEventos()) {
+        if (e.getTipo() == TipoEvento.TARJETAROJA &&
+            e.getJugador().getSeleccion().equals(seleccion)) {
+            count++;
+        }
+    }
+    return count;
+}
+
 }

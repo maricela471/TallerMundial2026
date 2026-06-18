@@ -128,10 +128,12 @@ public int obtenerPuntos(Seleccion s) {
             }
         }
         if (miParticipacion != null && rival != null) {
-            if (miParticipacion.getCantidadGoles() > rival.getCantidadGoles()) puntos += 3;
-            else if (miParticipacion.getCantidadGoles().equals(rival.getCantidadGoles())) puntos += 1;
+            if (miParticipacion.cantidadGoles() > rival.cantidadGoles()) puntos += 3;
+            else if (miParticipacion.cantidadGoles()==rival.cantidadGoles()) puntos += 1;
         }
     }
+        
+    
     return puntos;
 }
          
