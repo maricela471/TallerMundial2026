@@ -31,8 +31,7 @@ public class Partido {
     private Integer tiempoAdicional;
     private Fase fase;
     private Estadio seDesarrolla;
-    private Participacion participacion1;
-    private Participacion participacion2;
+    private ArrayList<Participacion>listaParticipaciones;
     private ArrayList<Evento> listaEventos;
     private ArrayList<Arbitraje> arbitraje;
     
@@ -47,10 +46,9 @@ public class Partido {
         this.tiempoAdicional = tiempoAdicional;
         this.fase=fase;
         this.seDesarrolla=seDesarrolla;
-        this.arbitraje=new ArrayList<>();
-        this.participacion1=participacion1;
-        this.participacion2=participacion2;
-        this.listaEventos=new ArrayList<>();
+        this.arbitraje=new ArrayList<Arbitraje>();
+        this.listaParticipaciones=new ArrayList<Participacion>();
+        this.listaEventos=new ArrayList<Evento>();
         
     }
     //setters
@@ -81,13 +79,7 @@ public class Partido {
     }
     
 
-    public void setParticipacion1(Participacion participacion1) {
-        this.participacion1 = participacion1;
-    }
-
-    public void setParticipacion2(Participacion participacion2) {
-        this.participacion2 = participacion2;
-    }
+    
     
     
     
@@ -117,13 +109,13 @@ public class Partido {
         return seDesarrolla;
     }
 
-    public Participacion getParticipacion1() {
-        return participacion1;
+    public ArrayList<Participacion> getListaParticipaciones() {
+        return listaParticipaciones;
     }
+    
 
-    public Participacion getParticipacion2() {
-        return participacion2;
-    }
+  
+        
 
     public ArrayList<Arbitraje> getListaArbitraje() {
         return arbitraje;

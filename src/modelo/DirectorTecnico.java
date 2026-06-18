@@ -28,11 +28,13 @@ package modelo;
 public class DirectorTecnico extends Persona {
 
     private int fechaNombramiento;
+    private Seleccion seleccion;
 
     
-    public DirectorTecnico(String nombre, int fechaNacimiento, int fechaNombramiento) {
+    public DirectorTecnico(String nombre, int fechaNacimiento, int fechaNombramiento,Seleccion seleccion) {
         super(nombre, fechaNacimiento);
         this.fechaNombramiento = fechaNombramiento;
+        this.seleccion=seleccion;
     }
 
     //setters
@@ -41,11 +43,21 @@ public class DirectorTecnico extends Persona {
         this.fechaNombramiento = fechaNombramiento;
     }
 
+    public void setSeleccion(Seleccion seleccion) {
+        this.seleccion = seleccion;
+    }
+    
+
     //getters
 
     public int getFechaNombramiento() {
         return fechaNombramiento;
     }
+
+    public Seleccion getSeleccion() {
+        return seleccion;
+    }
+    
 
     
 

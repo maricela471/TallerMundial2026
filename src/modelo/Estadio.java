@@ -3,6 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package modelo;
+import java.util.ArrayList;
 
 /**
  * Representa un estadio dentro de una sede mundialista.
@@ -23,13 +24,16 @@ package modelo;
 
 public class Estadio {
     private String nombre;
-    private Integer capacidad;
-    
+    private Integer capacidad;//relaciones y sede
+    private Sede sede;
+    private ArrayList<Partido>listaPartidos;
     //constructor
 
-    public Estadio(String nombre, Integer capacidad) {
+    public Estadio(String nombre, Integer capacidad,Sede sede) {
         this.nombre = nombre;
         this.capacidad = capacidad;
+        this.sede=sede;
+        this.listaPartidos=new ArrayList<Partido>();
     }
     //setters
 
@@ -40,6 +44,14 @@ public class Estadio {
     public void setCapacidad(Integer capacidad) {
         this.capacidad = capacidad;
     }
+
+    public void setSede(Sede sede) {
+        this.sede = sede;
+    }
+    
+
+   
+    
     
     //getters
 
@@ -50,6 +62,18 @@ public class Estadio {
     public Integer getCapacidad() {
         return capacidad;
     }
+
+    public Sede getSede() {
+        return sede;
+    }
+    //Métodos
+    /**
+    * Agrega un partido a la lista de partidos disputados en este estadio.
+    * @param p el partido a agregar de tipo Partido
+    */
+      public void agregarPartido(Partido p){
+       listaPartidos.add(p);
+      }
     
     
 }

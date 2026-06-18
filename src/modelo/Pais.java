@@ -31,16 +31,19 @@ public class Pais {
     private String bandera;
     private  ArrayList<Arbitro>listaArbitro;
     private  ArrayList <Sede>listaSedes;
+    private Seleccion Seleccion;
    
     
     
     //constructor
 
-    public Pais(String nombre, String bandera) {
+    public Pais(String nombre, String bandera,Seleccion seleccion) {
         this.nombre = nombre;
         this.bandera = bandera;
         this.listaSedes= new ArrayList<>();
         this.listaArbitro=new ArrayList<>();
+        this.Seleccion=seleccion;
+        
     }
     
     //setters
@@ -52,6 +55,11 @@ public class Pais {
     public void setBandera(String bandera) {
         this.bandera = bandera;
     }
+
+    public void setSeleccion(Seleccion Seleccion) {
+        this.Seleccion = Seleccion;
+    }
+    
 
     
     //getters
@@ -71,6 +79,11 @@ public class Pais {
     public ArrayList<Arbitro> getListaArbitro() {
         return listaArbitro;
     }
+
+    public Seleccion getSeleccion() {
+        return Seleccion;
+    }
+    
 
     
     

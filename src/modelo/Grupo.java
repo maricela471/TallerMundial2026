@@ -40,13 +40,15 @@ public class Grupo {
     private String identificacion;
     private String descripcion;
     private ArrayList<Seleccion> listaSelecciones;
-    private ArrayList<Fase>listaFases;
+    private Fase fase;
+    private ArrayList<Participacion>listaparticipaciones;
      //constructor
-    public Grupo (String identificacion, String descripcion){
+    public Grupo (String identificacion, String descripcion,Fase fase){
         this.identificacion=identificacion;
         this.descripcion=descripcion;
-        this.listaSelecciones=new ArrayList<>();
-        this.listaFases=new ArrayList<>();
+        this.fase=fase;
+        this.listaSelecciones=new ArrayList<Seleccion>();
+        this.listaparticipaciones= new ArrayList<Participacion>();
            
     }
     //setters
@@ -68,9 +70,18 @@ public class Grupo {
         return listaSelecciones;
     }
 
-    public ArrayList<Fase> getListaFases() {
-        return listaFases;
+    public Fase getFase() {
+        return fase;
     }
+
+    public ArrayList<Participacion> getListaparticipaciones() {
+        return listaparticipaciones;
+    }
+
+   
+    
+
+    
     
     
     //Métodos
@@ -90,38 +101,35 @@ public class Grupo {
     public void eliminarSeleccion(Seleccion s){
         listaSelecciones.remove(s);
     }
-    public void agregarFase(Fase f){
-    listaFases.add(f);
+
+    public void setFase(Fase fase) {
+        this.fase = fase;
     }
+    
     /**
- * Calcula la cantidad de puntos obtenidos por una selección
- * a lo largo de todas las fases y partidos disputados.
- *
- * Recorre cada fase del torneo y sus partidos, identificando
- * la participación de la selección indicada. Según el resultado
- * del partido, asigna los puntos correspondientes:
+ * Calcula los puntos obtenidos por una selección en la fase de grupos.
+ * Recorre los partidos de la fase y según el resultado asigna:
  * - Victoria: 3 puntos
  * - Empate: 1 punto
  * - Derrota: 0 puntos
- *
- * @param s la selección de la cual se desea calcular los puntos.
- * @return el total de puntos acumulados por la selección en el torneo.
+ * @param s la selección de la cual se desea calcular los puntos
+ * @return el total de puntos acumulados por la selección
  */
-
-     public int obtenerPuntos(Seleccion s) {
+public int obtenerPuntos(Seleccion s) {
     int puntos = 0;
-    for (Fase fase : listaFases) {//primer for recorre las fases
-        for (Partido partido : fase.getListaPartidosFase()) {// recorre cada partido de esa fase
-            Participacion p1 = partido.getParticipacion1();//asigna a cada equipo que participo una identificacion
-            Participacion p2 = partido.getParticipacion2();
-            
-            if (p1.getSeleccion().equals(s)) {//compara, si el contenido de los objeto es el mismo
-                if (p1.getCantidadGoles() > p2.getCantidadGoles()) puntos += 3;
-                else if (p1.getCantidadGoles().equals(p2.getCantidadGoles())) puntos += 1;
-            } else if (p2.getSeleccion().equals(s)) {
-                if (p2.getCantidadGoles() > p1.getCantidadGoles()) puntos += 3;
-                else if (p2.getCantidadGoles().equals(p1.getCantidadGoles())) puntos += 1;
+    for (Partido partido : fase.getListaPartidosFase()) {
+        Participacion miParticipacion = null;
+        Participacion rival = null;
+        for (Participacion p : partido.getListaParticipaciones()) {
+            if (p.getSeleccion().equals(s)) {
+                miParticipacion = p;
+            } else {
+                rival = p;
             }
+        }
+        if (miParticipacion != null && rival != null) {
+            if (miParticipacion.getCantidadGoles() > rival.getCantidadGoles()) puntos += 3;
+            else if (miParticipacion.getCantidadGoles().equals(rival.getCantidadGoles())) puntos += 1;
         }
     }
     return puntos;

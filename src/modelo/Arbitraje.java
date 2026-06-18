@@ -27,6 +27,7 @@ import enumeracion.CategoriaArbitro;
 public class Arbitraje {
     private Arbitro arbitro;
     private CategoriaArbitro rol;
+    
 
     //constructor 
 

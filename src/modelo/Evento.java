@@ -29,12 +29,13 @@ public class Evento {
     private TipoEvento tipo;
     private int minuto;
     private Jugador jugador;
-
+    private Partido partido;
     
-    public Evento(TipoEvento tipo, int minuto, Jugador jugador) {
+    public Evento(TipoEvento tipo, int minuto, Jugador jugador,Partido partido) {
         this.tipo = tipo;
         this.minuto = minuto;
         this.jugador = jugador;
+        this.partido=partido;
     }
 
     //setters
@@ -51,6 +52,11 @@ public class Evento {
         this.jugador = jugador;
     }
 
+    public void setPartido(Partido partido) {
+        this.partido = partido;
+    }
+    
+
     //getters
 
     public TipoEvento getTipo() {
@@ -64,6 +70,11 @@ public class Evento {
     public Jugador getJugador() {
         return jugador;
     }
+
+    public Partido getPartido() {
+        return partido;
+    }
+    
 
 }
 

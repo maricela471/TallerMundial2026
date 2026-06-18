@@ -29,8 +29,9 @@ import enumeracion.Rol;
 public class CuerpoTecnico extends Persona {
 
     private Rol rol;
+    private Seleccion seleccion;
 
-    public CuerpoTecnico(String nombre, int fechaNacimiento, Rol rol) {
+    public CuerpoTecnico(String nombre, int fechaNacimiento, Rol rol,Seleccion seleccion) {
         super(nombre, fechaNacimiento);
         this.rol = rol;
     }
@@ -41,11 +42,21 @@ public class CuerpoTecnico extends Persona {
         this.rol = rol;
     }
 
+    public void setSeleccion(Seleccion seleccion) {
+        this.seleccion = seleccion;
+    }
+    
+
     //getters
     
     public Rol getRol() {
         return rol;
     }
+
+    public Seleccion getSeleccion() {
+        return seleccion;
+    }
+    
 
 
 }

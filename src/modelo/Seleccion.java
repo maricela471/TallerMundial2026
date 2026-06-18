@@ -45,7 +45,7 @@ public class Seleccion {
         this.camisetaSecundaria = camisetaSecundaria;
         this.cabezaGrupo = cabezaGrupo;
         this.rankingFIFA = rankingFIFA;
-        this.directorTecnico = directorTecnico;
+        this.directorTecnico = directorTecnico;//cambiar array
         this.listaCuerpoTecnico =new ArrayList <>();
         this.grupo=grupo;
         this.pais=pais;

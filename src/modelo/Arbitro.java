@@ -27,12 +27,14 @@ package modelo;
 
 public class Arbitro extends Persona {
     private int aniosExperiencia;
+    private Pais pais;
 
     //constructor
 
-    public Arbitro(String nombre, int fechaNacimiento, int aniosExperiencia) {
+    public Arbitro(String nombre, int fechaNacimiento, int aniosExperiencia,Pais pais) {
         super(nombre, fechaNacimiento);
         this.aniosExperiencia = aniosExperiencia;
+        this.pais=pais;
     }
     
     //setters
@@ -41,10 +43,20 @@ public class Arbitro extends Persona {
         this.aniosExperiencia = aniosExperiencia;
     }
 
+    public void setPais(Pais pais) {
+        this.pais = pais;
+    }
+    
+
     //getters
 
     public int getAniosExperiencia() {
         return aniosExperiencia;
     }
+
+    public Pais getPais() {
+        return pais;
+    }
+    
     
 }
