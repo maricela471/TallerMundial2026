@@ -29,7 +29,7 @@ public class Seleccion {
     private String camisetaSecundaria;
     private boolean cabezaGrupo;
     private Integer rankingFIFA;
-    private DirectorTecnico directorTecnico;//revisar porque la multiplicidad del UML indica que puede ser un ArraiList
+    private ArrayList <DirectorTecnico> directorTecnico;//revisar porque la multiplicidad del UML indica que puede ser un ArraiList
     private ArrayList<CuerpoTecnico> listaCuerpoTecnico;
     private Grupo grupo;
     private Pais pais;
@@ -45,7 +45,7 @@ public class Seleccion {
         this.camisetaSecundaria = camisetaSecundaria;
         this.cabezaGrupo = cabezaGrupo;
         this.rankingFIFA = rankingFIFA;
-        this.directorTcambiar array
+        this.directorTecnico=new  ArrayList<DirectorTecnico>();
         this.listaCuerpoTecnico =new ArrayList <>();
         this.grupo=grupo;
         this.pais=pais;
@@ -73,13 +73,7 @@ public class Seleccion {
 
     public void setRankingFIFA(Integer rankingFIFA) {
         this.rankingFIFA = rankingFIFA;
-    }
-
-    public void setDirectorTecnico(DirectorTecnico directorTecnico) {
-        this.directorTecnico = directorTecnico;
-    }
-
-   
+    }   
 
     public void setGrupo(Grupo grupo) {
         this.grupo = grupo;
@@ -115,9 +109,11 @@ public class Seleccion {
         return rankingFIFA;
     }
 
-    public DirectorTecnico getDirectorTecnico() {
+    public ArrayList<DirectorTecnico> getDirectorTecnico() {
         return directorTecnico;
     }
+
+   
 
     public ArrayList<CuerpoTecnico> getListaCuerpoTecnico() {
         return listaCuerpoTecnico;
@@ -186,6 +182,13 @@ public class Seleccion {
      */
     public void agregarCuerpoTecnico(CuerpoTecnico c){
         listaCuerpoTecnico.add(c);
+    }
+    /**
+     * Método para agregar un director tecnico
+     * @param d esel director tecnico a agregar
+     */
+    public void agregarDirectorTecnico(DirectorTecnico d){
+        directorTecnico.add(d);
     }
     
   
