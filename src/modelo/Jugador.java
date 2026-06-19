@@ -1,6 +1,6 @@
 package modelo;
 import java.util.ArrayList;
-import enumeracion.Posicion;
+import enumeracion.*;
 /**
  * Clase "Jugador", representa a un futbolista convocado por una selección
  * para participar en el torneo mundialista.
@@ -24,7 +24,7 @@ import enumeracion.Posicion;
  */
 
 
-public class Jugador extends Persona {
+public class Jugador extends Persona implements Comparable<Jugador> {
 
     private int dorsal;
     private Posicion posicion;
@@ -111,6 +111,35 @@ public class Jugador extends Persona {
     public void agregarEventos(Evento e){
         listaEventos.add(e);
     }
+    /**
+ * Cuenta la cantidad de goles convertidos por el jugador
+ * sumando los eventos de tipo GOL en su lista de eventos.
+ * @return cantidad de goles del jugador
+ */
+    public int contarGoles(){
+        int cantGoles=0;
+        for (Evento e:listaEventos){
+            if(e.getTipo()==TipoEvento.GOL){
+                cantGoles++;
+            }
+        }
+        return cantGoles;
+                
+    }
+    
+    /**
+ * Compara este jugador con otro según la cantidad de goles convertidos.
+ * El orden es descendente: mayor cantidad de goles va primero.
+ * @param otro el jugador con quien se compara
+ * @return valor negativo si este jugador tiene más goles, 
+ *         positivo si tiene menos, cero si tienen la misma cantidad
+ */
+    @Override
+    public int compareTo(Jugador otro){
+        return Integer.compare(otro.contarGoles(),this.contarGoles());
+        
+    }
+    
 
 
     
