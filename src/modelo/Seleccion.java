@@ -190,7 +190,7 @@ public class Seleccion {
     public void agregarDirectorTecnico(DirectorTecnico d){
         directorTecnico.add(d);
     }
-    
+   
   
 }
 

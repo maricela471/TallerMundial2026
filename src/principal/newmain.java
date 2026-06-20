@@ -12,15 +12,14 @@ import enumeracion.*;
  * @author USUARIO
  */
 public class newmain {
-
-    /**
-     * @param args the command line arguments
-     */
+/**
+   
     public static void main(String[] args) {
         
         // TODO code application logic here
         // Crear objetos base
-Mundial mundial1 = new Mundial(2026, "tigre", 11062026, 18072026);
+
+        Mundial mundial1 = new Mundial(2026, "tigre", 11062026, 18072026);
 Pais Argentina = new Pais("Argentina", "celeste y blanca",null);
 Pais Uruguay = new Pais("Uruguay", "celeste y blanca",null);
 
@@ -60,4 +59,6 @@ System.out.println("Puntos Argentina: " + grupoA.obtenerPuntos(seleccion1));
 System.out.println("Puntos Uruguay: " + grupoA.obtenerPuntos(seleccion2));
      
 }
+}
+*/
 }

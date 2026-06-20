@@ -5,6 +5,7 @@
 package Servicio;
 import java.util.*;
 import modelo.*;
+import enumeracion.*;
 
 /**
  * Genera y muestra en consola la tabla de posiciones de un grupo.
@@ -31,5 +32,35 @@ public class ServicioMundial {
       }
        
     }
+    public void rankingGoleadoresMundial(ArrayList<Fase>listaFase){
+        ArrayList<Jugador> listaGoleadores = new ArrayList<>();
+        for (Fase f:listaFase){
+            for(Partido p:f.getListaPartidosFase()){
+                for(Evento e:p.getListaEventos() ){
+                    if(e.getTipo()==TipoEvento.GOL){
+                        Jugador j=e.getJugador();
+                        if(!listaGoleadores.contains(j)){
+                        listaGoleadores.add(e.getJugador());
+                        }
+                    }
+                        
+                }
+            }
+        }
+    Collections.sort(listaGoleadores);
+    System.out.println("RANKING GOLEADORES DEL MUNDIAL");
+    for(Jugador j:listaGoleadores){
+        System.out.println(j.getNombre());
+    }
+    }
     
+     public void tablaResultadoPorSeleccion(Seleccion s){
+         for(Participacion p:s.getListaParticipacion()){
+                         
+                
+            }
+    }
+    
+        
 }
+    
