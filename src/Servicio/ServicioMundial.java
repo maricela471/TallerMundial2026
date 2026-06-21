@@ -146,7 +146,37 @@ public class ServicioMundial {
                 
          }
      }
-    
+     
+     public void fichaTecnicaDePartido(Partido p){
+         System.out.println("FICHA TECNICA DEL PARTIDO");
+          for(Participacion e:p.getListaParticipaciones()){
+             Seleccion s=e.getSeleccion();
+             int cantDelanteros=0;
+             int cantMedioCampista=0;
+             int cantDefensores=0;
+               for(Jugador j:s.getListaJugadores()){
+                 if(j.getPosicion()==Posicion.DELANTERO){
+                     cantDelanteros+=1;
+                 }
+                 if(j.getPosicion()==Posicion.MEDIOCAMPISTA){
+                     cantMedioCampista+=1;
+                 }
+                 if(j.getPosicion()==Posicion.DEFENSOR){
+                     cantDefensores+=1;
+                 }
+                 
+             }
+               System.out.println("Alineacion de la seleccion "+s.getNombreFederacion()+": "+ cantDefensores+"-"+cantMedioCampista+"-"+cantDelanteros);
+         }
+          for(Evento e:p.getListaEventos()){
+              System.out.println(e.getTipo()+":"+e.getMinuto()+"minutos. Jugador: "+e.getJugador().getNombre());
+          }
+          for(Participacion part : p.getListaParticipaciones()){
+    System.out.println(part.getSeleccion().getNombreFederacion() + ": " + part.cantidadGoles() + " goles");
+}
+       
+     
+     } 
         
 }
     
