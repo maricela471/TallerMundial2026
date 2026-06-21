@@ -146,7 +146,32 @@ public class ServicioMundial {
                 
          }
      }
-     
+     /**
+ * Genera y muestra por consola la ficha técnica de un partido.
+ * 
+ * La ficha incluye:
+ * - Encabezado con el título "FICHA TECNICA DEL PARTIDO".
+ * - Alineación de cada selección participante en formato defensores-mediocampistas-delanteros,
+ *   calculada a partir de la lista de jugadores y sus posiciones.
+ * - Listado de eventos ocurridos en el partido (tipo de evento, minuto y jugador involucrado).
+ * - Resultado final de cada selección, mostrando la cantidad de goles convertidos.
+ *
+ * Parámetros:
+ * @param p Partido del cual se desea imprimir la ficha técnica.
+ *
+ * Detalles de implementación:
+ * - Se recorre la lista de participaciones del partido para obtener cada selección.
+ * - Se cuentan los jugadores según su posición (DELANTERO, MEDIOCAMPISTA, DEFENSOR).
+ * - Se imprime la alineación de cada selección en formato clásico (ejemplo: 4-4-2).
+ * - Se recorren los eventos registrados en el partido, mostrando tipo, minuto y jugador.
+ * - Finalmente, se imprime el marcador con los goles de cada selección.
+ *
+ * Uso típico:
+ * fichaTecnicaDePartido(partido);
+ * 
+ * @author Ramírez Maricela
+ */
+
      public void fichaTecnicaDePartido(Partido p){
          System.out.println("FICHA TECNICA DEL PARTIDO");
           for(Participacion e:p.getListaParticipaciones()){
@@ -177,6 +202,27 @@ public class ServicioMundial {
        
      
      } 
-        
+     public void estadisticaEstadio(Estadio e){
+         int cantPartidos=0;
+         for(Partido p:e.getListaPartidos()){
+             cantPartidos+=1;
+         }
+         System.out.println("La cantidad de partidos jugados en el estadio "+e.getNombre()+":"+cantPartidos);
+         
+     }
+     public void estadisticaPorSede(Mundial m,String ciudad){
+         int cantPartidos=0;
+         for (Sede s:m.getListaSedes()){
+             if(s.getCiudad().equals(ciudad)){
+                 for(Estadio t:s.getListaTieneEstadio()){
+                  for (Partido p:t.getListaPartidos())
+                      cantPartidos+=1;
+             }
+         }
+         
+     }
+         
+    System.out.println("En la ciudad " + ciudad + " se jugaron " + cantPartidos + " partidos");    
+}
 }
     

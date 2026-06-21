@@ -66,6 +66,11 @@ public class Estadio {
     public Sede getSede() {
         return sede;
     }
+
+    public ArrayList<Partido> getListaPartidos() {
+        return listaPartidos;
+    }
+    
     //Métodos
     /**
     * Agrega un partido a la lista de partidos disputados en este estadio.
