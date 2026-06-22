@@ -86,7 +86,7 @@ public class ServicioMundial {
          int cantTarjetasAmarillas=0;
          int cantTarjetasRojas=0;
          int cantDobleAmarilla=0;
-         System.out.println("LISTADO DE TARJETAS DE SELECCION: "+s.getNombreFederacion());
+         System.out.println("LISTADO DE TARJETAS DE SELECCION: "+s.getPais().getNombre());
          for(Jugador j:s.getListaJugadores()){
              for (Evento e:j.getListaEventos()){
                  if(e.getTipo()==TipoEvento.DOBLEAMARILLA){
