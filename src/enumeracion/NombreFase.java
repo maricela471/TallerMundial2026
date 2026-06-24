@@ -6,7 +6,7 @@ package enumeracion;
 
 /**
  *Representa las distintas posibles etapas del mundial
- * @authores Ramirez Maricela,Irigoyen Santiago,Cisnero Ismael
+ * @author Ramirez Maricela
  * @version 1.0
  */
 public enum NombreFase {

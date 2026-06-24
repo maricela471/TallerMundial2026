@@ -4,6 +4,8 @@
  */
 package modelo;
 import java.util.ArrayList;
+import enumeracion.NombreFase;// se importa NombreFase, que son las opciones disponibles de nombres que puede tomar la fase
+
 
 /**
  * Clase "Fase", representa una etapa del torneo mundialista.
@@ -23,11 +25,9 @@ import java.util.ArrayList;
  * - agregarGrupos(Grupo s): añade un grupo a la fase.
  * - agregarPartidos(Partido s): añade un partido a la fase.
  *
- * @authors Ramírez Maricela
+ * @author Ramírez Maricela
  */
 
-import enumeracion.NombreFase;// se importa NombreFase, que son las opciones disponibles de nombres que puede tomar la fase
-import java.util.ArrayList;
 
 public class Fase {
     private NombreFase nombre;

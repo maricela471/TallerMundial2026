@@ -5,13 +5,18 @@
 package enumeracion;
 
 /**
- *
- * @author USUARIO
+ * Enumeración que representa las distintas posiciones posibles
+ * de un jugador dentro de un equipo de fútbol.
+ * Esta enumeración se utiliza para clasificar y organizar
+ * a los jugadores dentro de la estructura táctica de una selección.
+ * @author Ramírez Maricela
+ * @version 1.0
  */
 public enum Posicion {
     ARQUERO,
     DEFENSOR,
     MEDIOCAMPISTA,
     DELANTERO
-    
 }
+
+

@@ -11,10 +11,45 @@ import java.util.Scanner;
 
 
 /**
+ * Clase principal del sistema de gestión del Mundial 2026.
+ * 
+ * Esta clase inicializa las entidades principales del torneo (Mundial, países,
+ * selecciones, jugadores, sedes, estadios, fases, grupos, partidos, participaciones y eventos).
+ * Además, provee un menú interactivo para la carga de datos y generación de informes.
  *
- * @author USUARIO
+ * Funcionalidades del menú:
+ * 1. Agregar sede
+ * 2. Agregar estadio
+ * 3. Agregar país y selección
+ * 4. Agregar jugador
+ * 5. Agregar fase y grupo
+ * 6. Agregar partido
+ * 7. Registrar evento
+ * 8. Tabla de posiciones por grupo
+ * 9. Ranking de goleadores
+ * 10. Informe disciplinario por selección
+ * 11. Informe disciplinario por jugador
+ * 12. Ficha técnica de partido
+ * 13. Estadísticas por estadio
+ * 14. Estadísticas por ciudad
+ * 0. Salir
+ *
+ * @author Ramirez Maricela
  */
 public class newmain {
+      /**
+     * Método principal que ejecuta el sistema de gestión del Mundial 2026.
+     * 
+     * Inicializa objetos de prueba (Argentina, Brasil, Messi, Vinicius, etc.) y
+     * luego presenta un menú interactivo en consola para que el usuario pueda:
+     * - Cargar nuevas entidades (sedes, estadios, países, selecciones, jugadores, fases, grupos, partidos, eventos).
+     * - Consultar informes estadísticos (tabla de posiciones, ranking de goleadores, informes disciplinarios, fichas técnicas, estadísticas por estadio y ciudad).
+     *
+     * El sistema utiliza colecciones dinámicas (ArrayList) para almacenar las entidades
+     * y un objeto de la clase {@link ServicioMundial} para generar los reportes.
+     *
+     * @param args argumentos de línea de comandos (no utilizados en esta implementación).
+     */
     public static void main(String[] args) {
         // Mundial
 Mundial mundial = new Mundial(2026, "Pibe", 11062026, 18072026);

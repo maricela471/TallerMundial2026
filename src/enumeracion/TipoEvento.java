@@ -6,7 +6,7 @@ package enumeracion;
 
 /**
  * Enumera los distintos eventos que pueden ocurrir durante un partido
- * @author Ramirez Maricela, Irigoyen Santiago,Cisnero Ismael
+ * @author Ramirez Maricela
  * @version 1.0
  */
 public enum TipoEvento {
@@ -21,4 +21,3 @@ public enum TipoEvento {
     LESION
     
 }
-//Se podria poner como evento "suspencionpartido"?
